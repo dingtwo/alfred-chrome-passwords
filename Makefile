@@ -1,5 +1,5 @@
 build:
-	pip install --requirement requirements.txt --target=.
+	/usr/local/bin/python -m pip install --requirement requirements.txt --target=.
 
-link:
-	@ln -fs `pwd` "/Users/sadovnychyi/Google Drive/Sync/Alfred.alfredpreferences/workflows"
+# link:
+# 	@ln -fs `pwd` "/Users/sadovnychyi/Google Drive/Sync/Alfred.alfredpreferences/workflows"

@@ -1,0 +1,47 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - master  # 你的主分支
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 2.7
+
+    - name: Install dependencies
+      run: |
+        pip install --requirement requirements.txt --target=.
+
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Package workflow
+      run: zip -r ChromePassword.alfredworkflow *
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [build, package]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Upload release artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ChromePassword.alfredworkflow
+        path: ChromePassword.alfredworkflow

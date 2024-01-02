@@ -67,7 +67,7 @@
 				<key>runningsubtext</key>
 				<string>Reading database...</string>
 				<key>script</key>
-				<string>python passwords.py --query="$1"</string>
+				<string>/usr/local/bin/python passwords.py --query="$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -92,7 +92,7 @@
 			<key>config</key>
 			<dict>
 				<key>autopaste</key>
-				<false/>
+				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
 				<key>transient</key>
@@ -113,7 +113,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python decrypt.py $1</string>
+				<string>/usr/local/bin/python decrypt.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
